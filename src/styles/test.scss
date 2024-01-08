@@ -1,0 +1,10 @@
+@use "partials" as p;
+
+.test__text {
+    @include p.form-text-light;
+    font-size: 3.5rem;
+}
+
+.scroll-watcher {
+    @include p.scroll-watcher;
+}
