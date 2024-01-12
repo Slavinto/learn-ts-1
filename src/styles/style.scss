@@ -2,8 +2,6 @@
 @use "footer";
 @use "defaults";
 
-@use "test";
-
 // pages
 // @use "auth";
 // @use "[id]" as id;
@@ -15,6 +13,7 @@
 // @use "Banner.style";
 // @use "Card.style";
 // @use "Cards.style";
+@use "@/styles/component-styles/Layout.style";
 // @use "Navbar.style";
 // @use "Spinner.style";
 
