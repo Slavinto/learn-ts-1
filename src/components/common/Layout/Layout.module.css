@@ -1,6 +1,0 @@
-.root {
-    @apply h-full mx-auto;
-    @apply bg-green-300;
-    max-width: 2460px;
-    min-height: calc(100vh - 88px);
-}

@@ -1,19 +1,27 @@
-// import "@/styles/style.scss";
-import "@/styles/main.css";
+import "@/styles/style.scss";
 import type { AppProps } from "next/app";
 import type { FCWithChildren } from "@/components/types/component.types";
+import { ReactNode } from "react";
 
-const NoLayoutComponent: FCWithChildren = ({ children }) => <>{children}</>;
+const NoLayoutComponent: FCWithChildren<Props> = ({ children }) => (
+    <div className='root _wrapper'>{children}</div>
+);
+
+type Props = {
+    children: ReactNode;
+};
 
 export default function App({
     Component,
     pageProps,
-}: AppProps & { Component: { Layout: FCWithChildren } }) {
+}: AppProps & { Component: { Layout: FCWithChildren<Props> } }) {
     const Layout = Component?.Layout ?? NoLayoutComponent;
 
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <div className='root _wrapper'>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </div>
     );
 }

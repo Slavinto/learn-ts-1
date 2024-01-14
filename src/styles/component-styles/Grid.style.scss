@@ -1,0 +1,27 @@
+@use "../partials" as p;
+
+.product-grid {
+    &__container {
+        overflow: visible;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include p.mq(desktop, max) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include p.mq(tablet-wide, max) {
+            grid-template-columns: 1fr;
+        }
+
+        &._layout-a {
+            & > *:nth-child(3) {
+            }
+            background-color: p.$formOverlay1;
+            box-shadow: 0.1rem -0.5rem 4rem -1.9rem p.$gray20;
+        }
+        &._layout-b {
+            background-color: blue;
+        }
+    }
+}

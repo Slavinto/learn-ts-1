@@ -13,8 +13,13 @@
 // @use "Banner.style";
 // @use "Card.style";
 // @use "Cards.style";
+@use "@/styles/component-styles/Grid.style";
+@use "@/styles/component-styles/Hero.style";
 @use "@/styles/component-styles/Layout.style";
-// @use "Navbar.style";
+@use "@/styles/component-styles/Marquee.style";
+@use "@/styles/component-styles/Navbar.style";
+@use "@/styles/component-styles/ProductCard.style";
+@use "@/styles/component-styles/ProductImages.style";
 // @use "Spinner.style";
 
 // .content {

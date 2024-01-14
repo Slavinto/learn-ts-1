@@ -1,11 +1,17 @@
-import styles from "./Layout.module.css";
 import type { FCWithChildren } from "@/components/types/component.types";
+import { ReactNode } from "react";
+import { Navbar } from "../..";
 
-const Layout: FCWithChildren = ({ children }) => {
+type Props = {
+    children: ReactNode;
+};
+
+const Layout: FCWithChildren<Props> = ({ children }) => {
     return (
-        <div className={styles.root}>
-            <div className='app-container _container'>{children}</div>
-        </div>
+        <>
+            <Navbar />
+            <div className='layout _container'>{children}</div>
+        </>
     );
 };
 

@@ -2,9 +2,10 @@ import type {
     Product as GqlProduct,
     ImageConnection,
     Image,
+    MoneyV2,
 } from "../schemas/schema";
 
-import { Product } from "@/framework/common/types/products";
+import type { Product, ProductPrice } from "@/framework/common/types/products";
 
 function normalizeProductImages(edgesArray: ImageConnection): Image[] {
     const { edges: images } = edgesArray;
@@ -18,6 +19,16 @@ function normalizeProductImages(edgesArray: ImageConnection): Image[] {
     return output;
 }
 
+function normalizeProductPrice({
+    amount,
+    currencyCode,
+}: MoneyV2): ProductPrice {
+    return {
+        value: +amount,
+        currencyCode,
+    };
+}
+
 export function normalize(inputProductObject: GqlProduct): Product {
     const {
         id,
@@ -26,6 +37,7 @@ export function normalize(inputProductObject: GqlProduct): Product {
         vendor,
         description,
         images,
+        priceRange,
         ...other
     } = inputProductObject;
 
@@ -37,6 +49,7 @@ export function normalize(inputProductObject: GqlProduct): Product {
         path: `/${handle}`,
         slug: handle?.replace(/^\/+|\/+$/g, ""),
         images: normalizeProductImages(images),
+        price: normalizeProductPrice(priceRange.minVariantPrice),
         ...other,
     };
     return normalizedProductObject;

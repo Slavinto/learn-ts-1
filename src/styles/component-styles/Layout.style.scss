@@ -1,8 +1,9 @@
-@use "@/styles/partials" as p;
+@use "../partials" as p;
 
-// .app {
-//     &-layout {
-//     }
-//     &-container {
-//     }
-// }
+.root {
+    overflow: visible;
+}
+
+.layout {
+    width: 100%;
+}

@@ -1,0 +1,48 @@
+@use "../partials" as p;
+
+.hero {
+    background-color: p.$formOverlay1;
+    box-shadow: 0.1rem -0.5rem 4rem -1.9rem p.$gray20;
+    &__description {
+        display: flex;
+        align-items: center;
+        gap: 8rem;
+        height: 40rem;
+
+        @include p.mq(tablet-wide, max) {
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        &-header {
+            padding: 4rem;
+            padding-left: 8rem;
+            @include p.hero-header;
+
+            @include p.mq(tablet-wide, max) {
+                padding: 2rem;
+            }
+        }
+        &-text {
+            padding: 8rem;
+            @include p.hero-text;
+            & > * {
+                @include p.hero-text;
+            }
+
+            @include p.mq(tablet-wide, max) {
+                padding: 2rem 8rem;
+                text-align: center;
+                font-size: 3rem;
+                & > * {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+    &__bg-container {
+        img {
+        }
+    }
+}
