@@ -2,6 +2,7 @@ import "@/styles/style.scss";
 import type { AppProps } from "next/app";
 import type { FCWithChildren } from "@/components/types/component.types";
 import { ReactNode } from "react";
+import { UIProvider } from "@/components/ui/context";
 
 const NoLayoutComponent: FCWithChildren<Props> = ({ children }) => (
     <div className='root _wrapper'>{children}</div>
@@ -19,9 +20,11 @@ export default function App({
 
     return (
         <div className='root _wrapper'>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <UIProvider>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </UIProvider>
         </div>
     );
 }

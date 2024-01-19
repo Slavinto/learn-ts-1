@@ -18,7 +18,7 @@ const ProductCard = (props: Props) => {
                 href={`/products/${slug}`}
                 className='product-card__title _link'
             >
-                <div>{name}</div>
+                <p>{name}</p>
 
                 <p className='product-card__price'>
                     {price.value}

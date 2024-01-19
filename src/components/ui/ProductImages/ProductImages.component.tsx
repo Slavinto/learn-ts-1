@@ -18,7 +18,7 @@ const ProductImages = (props: Props) => {
                 {images?.length > 0 ? (
                     images.map((i, idx) => {
                         // render only first foto
-                        // if (idx > 0) return;
+                        if (idx > 0) return;
                         return (
                             <div
                                 key={i.src}

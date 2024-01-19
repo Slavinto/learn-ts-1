@@ -6,9 +6,10 @@
     flex-direction: column;
     gap: 5rem;
     margin-top: 8rem;
-    background-color: p.$formOverlay2;
+    background-color: p.$formOverlay1;
     width: 100%;
-    padding: 4rem 10rem 0rem 10rem;
+    padding: 4rem 10rem 10rem 10rem;
+    text-align: center;
 
     &__items {
         display: flex;

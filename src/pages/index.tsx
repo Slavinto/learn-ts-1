@@ -6,7 +6,7 @@ import { Grid, Hero, Layout, Marquee, ProductCard } from "@/components/";
 export async function getStaticProps() {
     const productConfig = getConfig();
     const { products } = await getAllProducts(productConfig);
-    console.log(products && products[0].images);
+    // console.log(products && products[0].images);
     return products
         ? {
               props: {
@@ -24,12 +24,13 @@ export default function Home({
     products,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
     if (!products) return <h1>No products available</h1>;
+    // console.log({ products });
     const productImages = products.map((p) => p.images);
 
     return (
         <>
             <Hero header='Buy Now!' text={heroText} />
-            <Grid>
+            <Grid layout='A'>
                 {products.map((e) => (
                     <ProductCard
                         key={e.id}
@@ -39,6 +40,15 @@ export default function Home({
                 ))}
             </Grid>
             <Marquee products={products} />
+            <Grid layout='B'>
+                {products.map((e) => (
+                    <ProductCard
+                        key={e.id}
+                        componentLayout='simple'
+                        productInfo={e}
+                    />
+                ))}
+            </Grid>
         </>
     );
 }

@@ -1,18 +1,19 @@
 @use "../partials" as p;
 
 .product-card {
-    padding: 8rem 0rem;
-    box-shadow: -0.4rem 0.8rem 2.8rem -2.2rem p.$gray20;
+    width: 40rem;
+    height: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &._slim {
-        padding: 2rem 0rem;
         width: 30rem;
         height: 40rem;
         overflow: hidden;
 
         & > .product-card {
             &__title {
-                gap: 0rem;
             }
         }
     }
@@ -36,7 +37,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4rem;
 
         &:link,
         &:visited {
@@ -49,5 +49,6 @@
     }
 
     &__price {
+        margin: 2rem 0rem 4rem;
     }
 }

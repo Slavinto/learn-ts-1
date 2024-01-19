@@ -2,8 +2,16 @@
 
 .root {
     overflow: visible;
+    position: relative;
 }
 
 .layout {
     width: 100%;
+
+    &__sidebar-overlay {
+        @include p.overlay(p.$gray30);
+        pointer-events: auto;
+
+        z-index: 10;
+    }
 }

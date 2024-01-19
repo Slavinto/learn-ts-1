@@ -1,0 +1,43 @@
+@use "../partials" as p;
+
+.sidebar {
+    background-color: p.$black10;
+    width: 60rem;
+    height: 100%;
+    padding: 8rem;
+    position: fixed;
+    top: 0rem;
+    right: -60rem;
+    z-index: 15;
+
+    &__container {
+    }
+
+    &._active {
+        transform: translateX(-60rem);
+        transition: transform 300ms ease-out;
+    }
+
+    &-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        &__item {
+            @include p.form-header;
+            & > * {
+                color: p.$white;
+                font-size: 4rem;
+            }
+            width: 100%;
+
+            a {
+                &:link,
+                &:visited {
+                }
+                &:hover,
+                &:active {
+                }
+            }
+        }
+    }
+}
